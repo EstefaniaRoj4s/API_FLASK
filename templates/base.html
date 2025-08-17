@@ -4,20 +4,71 @@
     <meta charset="UTF-8">
     <title>{{ blog_title if blog_title else "Mini Blog" }}</title>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+
+    <style>
+        header {
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 0 0 12px 12px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            padding: 8px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            background: white;
+            color: #2c3e50;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #2c3e50;
+            color: white;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>{{ blog_title if blog_title else "Mini Blog" }}</h1>
         <nav>
-            <a href="{{ url_for('index') }}">Inicio</a>
-            <a href="{{ url_for('add_post') }}">Agregar Post</a>
+            <a href="{{ url_for('index') }}">🏠 Inicio</a>
+            <a href="{{ url_for('add_post') }}">✍️ Agregar Post</a>
         </nav>
     </header>
+
     <main>
         {% block content %}{% endblock %}
     </main>
+
     <footer>
-        <p>Desarrollado con Flask 🚀</p>
+        <p>Desarrollado con Flask por Estefanía Rojas</p>
     </footer>
 </body>
 </html>
